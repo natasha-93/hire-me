@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
+
+const queryClient = new QueryClient();
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Home />
+    </QueryClientProvider>
+  );
+};
 
 ReactDOM.render(
   <React.StrictMode>
